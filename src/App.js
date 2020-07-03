@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './App.module.css';
 import {Cards, Chart, CountryPicker} from './components';
 import { fetchData } from './api';
+import { Divider } from '@material-ui/core';
 import image from './images/covid-19-corona-virus-logo.jpg';
 
 class App extends React.Component {
@@ -29,8 +30,11 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <img className={styles.image} src={image} alt="COVID-19" />
+        <Divider />
         <Cards data={data}/>
+        <Divider />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Divider />
         <Chart data={data} country= { country }/>
       </div>
     );
